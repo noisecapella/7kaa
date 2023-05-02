@@ -91,6 +91,7 @@
 #include <CmdLine.h>
 #include <FilePath.h>
 #include <ConfigAdv.h>
+#include <unistd.h>
 
 #include <dbglog.h>
 #ifdef USE_WINDOWS
@@ -785,6 +786,7 @@ void Sys::main_loop(int isLoadedGame)
 
    while( 1 )
    {
+       usleep(1000);
          // #### begin Gilbert 31/10 ######//
          int rc = 0;
          // #### end Gilbert 31/10 ######//

@@ -64,6 +64,7 @@
 #include <OINGMENU.h>
 #include <CmdLine.h>
 #include <gettext.h>
+#include <unistd.h>
 
 
 //---------- define static variables ----------//
@@ -119,6 +120,7 @@ void Sys::process()
 {
 	//------- update frame count and is_sync_frame --------//
 
+    usleep(1);
 	frame_count++;
 	is_sync_frame = frame_count%3==0;	// check if sychronization should take place at this frame (for handling one sync per n frames)
 
@@ -687,7 +689,7 @@ void Sys::update_view()
 		{
 			vga.use_back();
 /*
-			char* germanStr = "d ü    ä    ß    ö    Ä    Ü    Ö";
+			char* germanStr = "d ï¿½    ï¿½    ï¿½    ï¿½    ï¿½    ï¿½    ï¿½";
 
 			vga_back.bar( ZOOM_X1, ZOOM_Y1, ZOOM_X1+300, ZOOM_Y1+150, VGA_LIGHT_GREEN );
 

@@ -38,6 +38,7 @@
 #include <OGAME.h>
 #include <OVGALOCK.h>
 #include "gettext.h"
+#include <unistd.h>
 
 #ifdef DEMO
 #define DISABLE_MULTI_PLAYER
@@ -107,6 +108,7 @@ void Game::main_menu()
 
 	while(1)
 	{
+        usleep(1);
 		game_mode = GAME_PREGAME;
 
 		//------- Display game title and paint menu box --------//
@@ -453,6 +455,7 @@ void Game::single_player_menu()
 
 	while(1)
 	{
+        usleep(1);
 		sys.yield();
 		vga.flip();
 		mouse.get_event();
@@ -710,6 +713,7 @@ void Game::multi_player_menu(int lobbied, char *game_host)
 
 	while(1)
 	{
+        usleep(1);
 		sys.yield();
 		vga.flip();
 		mouse.get_event();
